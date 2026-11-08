@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.runs/
+runs/
+*.q2
+*.q2.tmp
+*.tar
+*.tar.gz
+*.zip
+*.npz
+*.sqlite*
