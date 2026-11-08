@@ -12,6 +12,7 @@
 - `tools/materialize_q2.py`: reconstruct the exact 2,151,500,000-byte logical Q2 state file from the sparse release.
 - `tools/verify_q2.py`: verify a Q2 file against its expected whole-file checksum and sparse encoding.
 - `tests/test_release.py`: CPU-only deterministic release tests.
+- `validation/rtx3050-laptop-wsl2-2026-11-08.json`: completed 8.606B GPU sweep and independent SHA-256 validation.
 
 ## Quick start
 
@@ -36,7 +37,7 @@ python3 tools/verify_q2.py --input ./runs/new-sweep/epoch001-generated.q2
 
 ## Hardware and verified source
 
-The **parent 86.06B-address R568** experiment completed and was independently hash-verified on **NVIDIA RTX 3050 Laptop GPU, 4 GiB VRAM, compute capability 8.6, Ubuntu under WSL2**, on **2026-11-08**. It processed 321 GPU tiles; full logical state was 21,515,000,000 bytes, not resident in 4 GiB VRAM. The 8.606B release is the **first contiguous 10% of its verified epoch-001 output**, independently hashed against the original file. The 8.606B sweep itself is provided as runnable code, **not claimed here as independently benchmarked across GPU models**.
+The **parent 86.06B-address R568** experiment completed and was independently hash-verified on **NVIDIA RTX 3050 Laptop GPU, 4 GiB VRAM, compute capability 8.6, Ubuntu under WSL2**, on **2026-11-08**. It processed 321 GPU tiles; full logical state was 21,515,000,000 bytes, not resident in 4 GiB VRAM. The 8.606B release is the **first contiguous 10% of its verified epoch-001 output**, independently hashed against the original file. The **published 8.606B GPU code was then run independently on the same RTX 3050 Laptop GPU** on **2026-11-08**: **33 tiles, 43.8 seconds** for the GPU+host streaming sweep, followed by **COMPLETE_VERIFIED** against the released whole-file SHA-256. See [the reproducible validation record](validation/rtx3050-laptop-wsl2-2026-11-08.json). This is an end-to-end sweep time, **not a kernel-only benchmark**; no other GPU architectures are claimed tested.
 
 This exact PTX build targets **sm_86**. An NVIDIA CUDA driver and a compatible GPU architecture are required for the GPU path; non-NVIDIA cards are **not supported** by this backend. CPU scripts can inspect and reconstruct the published snapshot but do not offer practical 8.6B-state recurrent GPU performance.
 
