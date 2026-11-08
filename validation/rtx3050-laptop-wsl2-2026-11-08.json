@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-08",
+  "status": "COMPLETE_VERIFIED",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_memory_mib": 4096,
+    "compute_capability": "8.6",
+    "runtime": "Ubuntu on WSL2",
+    "backend": "NVIDIA CUDA Driver API / PTX sm_86"
+  },
+  "code": "gpu/hq86b_gpu.py",
+  "model": "synthetic 2-bit nearest-neighbour ring; not a measured connectome",
+  "command": "python3 gpu/hq86b_gpu.py --sweep --root ./runs/epoch001-replay",
+  "post_run_verification": "python3 tools/verify_q2.py --input ./runs/epoch001-replay/epoch001-generated.q2",
+  "gpu_selftest": {
+    "status": "PASS",
+    "gpu_words": 4096,
+    "bitwise_cpu_gpu": true
+  },
+  "run": {
+    "status": "FULL_GPU_SWEEP_DONE",
+    "virtual_addresses": 8606000000,
+    "transitions_per_epoch": 8606000000,
+    "packed_words": 537875000,
+    "logical_bytes": 2151500000,
+    "chunk_words": 16777216,
+    "tiles": 33,
+    "elapsed_seconds": 43.8
+  },
+  "output": {
+    "status": "COMPLETE_VERIFIED",
+    "whole_file_sha256": "b6a6109b2c5a0bb304d940e04e7027f276fd1ad4422b2e0005a29055b5dddb3f",
+    "expected_whole_file_sha256": "b6a6109b2c5a0bb304d940e04e7027f276fd1ad4422b2e0005a29055b5dddb3f",
+    "matches_released_one_tenth_parent_prefix": true
+  },
+  "cpu_tests": {
+    "tests": 3,
+    "status": "PASS"
+  },
+  "limitations": [
+    "Wall time includes host/Python/file I/O and is not a GPU kernel-only benchmark",
+    "Only one tested hardware/driver setup; no compatibility or throughput guarantees for other cards",
+    "This is a synthetic sparse model, not biological connectome reconstruction or cognition"
+  ]
+}
