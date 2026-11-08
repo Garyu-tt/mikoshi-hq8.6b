@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "Mikoshi HQ8.6B 10% R568 GPU epoch 001",
+  "released_at": "2026-11-08",
+  "origin": "First 8,606,000,000 contiguous virtual addresses of the independently verified BFB9000 R568 86,060,000,000-address GPU epoch-001 result",
+  "simulation": "synthetic quantized proxy; artificial one-neighbour ring; NOT a measured human connectome",
+  "parent_virtual_addresses": 86060000000,
+  "virtual_addresses": 8606000000,
+  "fraction_of_parent": "1/10",
+  "bits_per_address": 2,
+  "addresses_per_word": 16,
+  "endianness": "little",
+  "packed_words": 537875000,
+  "logical_size_bytes": 2151500000,
+  "nonzero_word_count": 8208,
+  "nonzero_encoding": "Sparse TSV with word_index (decimal), word_value (8-digit hexadecimal), tab-separated. All omitted words equal 0x00000000.",
+  "snapshot": "models/epoch001.sparse.tsv",
+  "sha256_materialized_q2": "b6a6109b2c5a0bb304d940e04e7027f276fd1ad4422b2e0005a29055b5dddb3f",
+  "sha256_verified_parent_q2": "dfa422e9fb75a8033b9f3f1db5daa934b97ba277328e687b9c3bd432ed879eb0",
+  "gpu_source": "gpu/hq86b_gpu.py",
+  "parent_gpu": "NVIDIA RTX 3050 Laptop GPU (SM 8.6), 4 GiB VRAM, Ubuntu under WSL2",
+  "parent_status": "COMPLETE_VERIFIED",
+  "parent_full_file_hash_verified": true,
+  "release_prefix_hash_verified": true,
+  "notes": [
+    "8.606 billion virtual addresses were extracted as a lossless sparse state snapshot; not 8.606 billion physically instantiated neuron objects.",
+    "No human anatomical neural graph or trained synaptic weights included.",
+    "Original full run used 321 GPU tiles; code included here is scaled to one tenth."
+  ]
+}
